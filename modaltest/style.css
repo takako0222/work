@@ -1,0 +1,31 @@
+@charset "utf-8";
+
+/* CSS Document */
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-family: "Khula", "游ゴシック", "Yu Gothic", YuGothic,
+    "Hiragino Kaku Gothic ProN", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo,
+    "ＭＳ Ｐゴシック", sans-serif;
+}
+
+html {
+  font-size: 15px;
+  letter-spacing: 0.05rem;
+  line-height: 2;
+  margin: 0;
+  padding: 0;
+}
+@media screen and (max-width: 768px) {
+  html {
+    font-size: 13px;
+  }
+}
+
+body {
+  background: #f9f9f9;
+  color: #000;
+  -webkit-text-size-adjust: 100%;
+}
