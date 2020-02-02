@@ -19,6 +19,9 @@
       <p class="modal_btn_sp">
         <a class="js-modal-open2" href="">SP用</a><span class="close">X</span class="close">
       </p>
+      <p class="bottom_btn">
+        ボトムボタンテスト
+      </p>
     </div>
     <div class="modal js-modal">
       <div class="modal__bg js-modal-close"></div>
@@ -162,21 +165,42 @@
         });
       });
 
+      $(function () {
+        $(".bottom_btn").on("click", function () {
+          $(".bottom_btn").fadeOut();
+          $(".modal_btn_pc").css("bottom", "");
+          return false;
+        });
+      });
+
       //スクロールしたら表示
+      //ボトムボタンの有り無し
       function campaign_window() {
+        var bottomBtnHeight = $('.bottom_btn').height();
+        var bottomBtnBlock = $('.bottom_btn').css('display');
         if ($(this).scrollTop() > 300) {
           //フェードインで表示
           $(".modal_btn_pc").fadeIn();
           // 上から降ってくる処理
           $(".modal_btn_pc").addClass("appear");
           $(".modal_btn_pc").show();
+          if (bottomBtnBlock === 'none') {
+            $(".modal_btn_pc").css("bottom", "");
+          } else {
+            $(".modal_btn_pc").css("bottom", bottomBtnHeight + 20 + "px");
+          }
         } else {
-          $(".modal_btn_pc").removeClass("appear");
+          $(".modal_btn_pc")
+          .removeClass("appear")
+          .css("bottom", "");
         }
       }
       $(function() {
         //スクロールに応じてスクロールを出す処理をスクロールイベントにバインドする。
         $(window).on("scroll", campaign_window);
+      });
+
+      $(function(){
       });
 
       //スクロール中非表示
